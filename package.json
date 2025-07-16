@@ -25,5 +25,20 @@
     "eslint-plugin-prettier": "^5.5.1",
     "eslint-plugin-react": "^7.37.5",
     "prettier": "^3.6.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb",
+      "prettier"
+    ],
+    "env": {
+      "node": true,
+      "es6": true
+    },
+    "settings": {
+      "node": {
+        "version": "22.0.0"
+      }
+    }
   }
 }
