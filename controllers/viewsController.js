@@ -13,7 +13,6 @@ exports.getOverview = catchAsync(async (req, res, next) => {
     title: `All Tours`,
     tours,
   });
-  next();
 });
 
 exports.getTour = catchAsync(async (req, res) => {
@@ -31,3 +30,9 @@ exports.getTour = catchAsync(async (req, res) => {
     tour,
   });
 });
+
+exports.getLoginForm = (req, res) => {
+  res.status(200).render('login', {
+    title: `Log in to your account`,
+  });
+};
