@@ -1,4 +1,18 @@
+# Node modules
 node_modules/
+
+# Environment variables
 .env
 config.env
+
+# Logs
 *.log
+npm-debug.log*
+
+# Parcel output
+public/js/bundled/
+
+# System files
+.DS_Store
+
+.cache/
