@@ -18,6 +18,7 @@ const bookingRouter = require('./routes/bookingRoutes');
 const viewRouter = require('./routes/viewRoutes');
 
 const app = express();
+app.enable('trust proxy');
 
 app.use(
   cors({
@@ -25,6 +26,8 @@ app.use(
     credentials: true,
   }),
 );
+
+app.options('*', cors());
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
