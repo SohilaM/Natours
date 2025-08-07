@@ -45,7 +45,6 @@ exports.signup = catchAsync(async (req, res, next) => {
   });
 
   const url = `${req.protocol}://${req.get('host')}/me`;
-  console.log(url);
   await new Email(newUser, url).sendWelcome();
 
   createSendToken(newUser, 201, res);
@@ -204,7 +203,6 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
   });
 
   // if token not expired && there is user, set the new password
-  console.log(user);
   if (!user) return next(new AppError('Token is invalid or has expired', 400));
   user.password = req.body.password;
   user.passwordConfirm = req.body.passwordConfirm;

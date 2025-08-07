@@ -23,14 +23,9 @@ const reviews = JSON.parse(
 // Import data into DB
 const importData = async () => {
   try {
-    console.log('adding tours');
-    // Assume tours loaded for this example comment it out
     await Tour.create(tours);
-    console.log('not adding tours already there.');
-    // console.log('adding users');
     await User.create(users, { validateBeforeSave: false });
     await Review.create(reviews);
-    console.log('adding reviews');
   } catch (err) {
     console.log(err);
   }
@@ -51,4 +46,3 @@ const deleteData = async () => {
 };
 if (process.argv[2] === '--import') importData();
 else if (process.argv[2] === '--delete') deleteData();
-console.log(process.argv);
